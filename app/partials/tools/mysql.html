@@ -1,0 +1,15 @@
+<div id="mysql" class="subpanel">
+    <h2>MySQL Create</h2>
+    <div class="inputs">
+        <input type="text" ng-model="username" placeholder="username"><br>
+        <div class="input-append">
+            <input type="text" ng-model="password" placeholder="password" ng-change="setHash()">
+            <button class="btn" ng-click="gen(); setHash();">Generate</button>
+        </div>
+        <code>MD5: {{hashed}}</code><br>
+        <input type="text" ng-model="database" placeholder="database"><br><br>
+
+        <pre>CREATE USER '{{username || "username"}}'@'localhost' IDENTIFIED BY '{{password || "password"}}';
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON `{{database || "database"}}`.* TO '{{username}}'@'localhost';</pre>
+    </div>
+</div>
