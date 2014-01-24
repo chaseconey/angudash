@@ -9,8 +9,8 @@ angular.module('myApp.controllers', []).
     function($scope, $routeParams) {
 
     $scope.tools = [
-        { name: "MD5 Hash", "id": "md5" },
-        { name: "MySQL Create", "id": "mysql" }
+        { name: "MD5 Hash", id: "md5" },
+        { name: "MySQL Create", id: "mysql" }
     ];
 
     $scope.template = $routeParams.tool || "";
